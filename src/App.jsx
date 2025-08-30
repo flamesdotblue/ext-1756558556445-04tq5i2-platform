@@ -1,28 +1,20 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroCover from './components/HeroCover';
+import GameBoard from './components/GameBoard';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-neutral-950 text-white font-inter">
+      <HeroCover />
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section className="mb-16">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Play Testris</h2>
+          <p className="text-neutral-300 mt-2 max-w-prose">A modern, responsive twist on the timeless falling-blocks puzzle. Use Arrow keys to move, Arrow Up to rotate, and Space to hard drop.</p>
+        </section>
+        <GameBoard />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
